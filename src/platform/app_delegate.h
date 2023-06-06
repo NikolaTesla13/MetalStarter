@@ -5,8 +5,8 @@
 #ifndef METALSTARTER_APP_DELEGATE_H
 #define METALSTARTER_APP_DELEGATE_H
 
-#include "apple.h"
-#include "mtk_view.h"
+#include "platform/apple.h"
+#include "platform/mtk_view.h"
 
 class AppDelegate : public NS::ApplicationDelegate {
  public:

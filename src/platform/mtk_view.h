@@ -5,8 +5,8 @@
 #ifndef METALSTARTER_MTK_VIEW_H
 #define METALSTARTER_MTK_VIEW_H
 
-#include "../renderer.h"
-#include "apple.h"
+#include "gfx/base_renderer.h"
+#include "platform/apple.h"
 
 class MTKViewDelegate : public MTK::ViewDelegate {
  public:
@@ -16,7 +16,7 @@ class MTKViewDelegate : public MTK::ViewDelegate {
   void drawInMTKView(MTK::View *pView) override;
 
  private:
-  Renderer *_pRenderer;
+  BaseRenderer *_pRenderer;
 };
 
 #endif  // METALSTARTER_MTK_VIEW_H

@@ -5,14 +5,14 @@
 #ifndef METALSTARTER_RENDERER_H
 #define METALSTARTER_RENDERER_H
 
-#include "platform/apple.h"
+#include "gfx/base_renderer.h"
 
-class Renderer {
+class Renderer : public BaseRenderer {
  public:
   explicit Renderer(MTL::Device* pDevice);
-  ~Renderer();
+  ~Renderer() override;
 
-  void draw(MTK::View* pView);
+  void draw(MTK::View* pView) override;
 
  private:
   MTL::Device* _pDevice;

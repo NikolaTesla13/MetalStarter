@@ -4,7 +4,8 @@
 
 #include "renderer.h"
 
-Renderer::Renderer(MTL::Device* pDevice) : _pDevice(pDevice->retain()) {
+Renderer::Renderer(MTL::Device* pDevice) : BaseRenderer(pDevice) {
+  _pDevice = pDevice->retain();
   _pCommandQueue = _pDevice->newCommandQueue();
 }
 
@@ -20,7 +21,7 @@ void Renderer::draw(MTK::View* pView) {
 
   MTL::RenderPassDescriptor* pRpd = pView->currentRenderPassDescriptor();
   pRpd->colorAttachments()->object(0)->setClearColor(
-      MTL::ClearColor(0.1, 0.1, 0.1, 1.0));
+      MTL::ClearColor(1.0, 0.1, 0.1, 1.0));
 
   MTL::RenderCommandEncoder* pEnc = pCmd->renderCommandEncoder(pRpd);
 
